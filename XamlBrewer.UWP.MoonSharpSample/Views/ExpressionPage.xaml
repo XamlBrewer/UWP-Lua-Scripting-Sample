@@ -1,0 +1,41 @@
+﻿<Page x:Class="XamlBrewer.UWP.MoonSharpSample.Views.ExpressionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:XamlBrewer.UWP.MoonSharpSample.Views"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}"
+                   Text="Lua Expression Evaluation"
+                   Padding="8 0 0 0" />
+        <!-- Body -->
+        <RelativePanel Grid.Row="1">
+            <!-- Expression -->
+            <TextBox x:Name="Expression"
+                     Width="240"
+                     />
+            <!-- Button -->
+            <Button x:Name="Evaluate"
+                    Content="Evaluate"
+                    Click="Button_Click"
+                    FontSize="24"
+                    Margin="8"
+                    Width="120"
+                    Height="60"
+                    RelativePanel.RightOf="Expression"
+                    RelativePanel.AlignVerticalCenterWith="Expression"/>
+            <!-- Result -->
+            <TextBlock x:Name="Result"
+                       RelativePanel.RightOf="Evaluate"
+                       RelativePanel.AlignVerticalCenterWith="Expression" />
+        </RelativePanel>
+    </Grid>
+</Page>
