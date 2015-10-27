@@ -96,10 +96,23 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\BusinessObject.cs" />
     <Compile Include="Mvvm\BindableBase.cs" />
     <Compile Include="Mvvm\DelegateCommand.cs" />
+    <Compile Include="Views\CSharpFunctionPage.xaml.cs">
+      <DependentUpon>CSharpFunctionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventHandlingPage.xaml.cs">
+      <DependentUpon>EventHandlingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ExpressionPage.xaml.cs">
       <DependentUpon>ExpressionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LuaFunctionPage.xaml.cs">
+      <DependentUpon>LuaFunctionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ObjectSharingPage.xaml.cs">
+      <DependentUpon>ObjectSharingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
@@ -116,6 +129,7 @@
     <None Include="XamlBrewer.UWP.MoonSharpSample_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\lua.gif" />
     <Content Include="Libs\MoonSharp.Interpreter.dll" />
     <Content Include="Libs\MoonSharp.Interpreter.pdb" />
     <Content Include="Properties\Default.rd.xml" />
@@ -132,7 +146,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\CSharpFunctionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EventHandlingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ExpressionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LuaFunctionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ObjectSharingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
