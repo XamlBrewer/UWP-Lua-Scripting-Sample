@@ -16,7 +16,8 @@
         <!-- Title -->
         <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}"
                    Text="C# Object Sharing"
-                   Padding="8 0 0 0" />
+                   Foreground="OrangeRed"
+                   Padding="20 0 0 20" />
         <!-- Body -->
         <StackPanel Orientation="Horizontal"
                     Grid.Row="1">

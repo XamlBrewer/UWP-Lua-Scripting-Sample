@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\lua.gif" />
+    <Content Include="Assets\moonsharp.png" />
     <Content Include="Libs\MoonSharp.Interpreter.dll" />
     <Content Include="Libs\MoonSharp.Interpreter.pdb" />
     <Content Include="Properties\Default.rd.xml" />

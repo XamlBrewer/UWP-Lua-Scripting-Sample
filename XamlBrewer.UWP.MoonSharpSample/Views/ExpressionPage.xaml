@@ -15,7 +15,8 @@
         <!-- Title -->
         <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}"
                    Text="Lua Expression Evaluation"
-                   Padding="8 0 0 0" />
+                   Foreground="OrangeRed"
+                   Padding="20 0 0 20" />
         <!-- Body -->
         <RelativePanel Grid.Row="1">
             <!-- Expression -->

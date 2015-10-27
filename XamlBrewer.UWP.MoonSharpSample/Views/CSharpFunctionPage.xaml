@@ -1,11 +1,10 @@
-﻿<Page
-    x:Class="XamlBrewer.UWP.MoonSharpSample.Views.CSharpFunctionPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:XamlBrewer.UWP.MoonSharpSample.Views"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+﻿<Page x:Class="XamlBrewer.UWP.MoonSharpSample.Views.CSharpFunctionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:XamlBrewer.UWP.MoonSharpSample.Views"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -14,18 +13,19 @@
         </Grid.RowDefinitions>
 
         <!-- Title -->
-        <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}"
-                   Text="C# Function Call"
-                   Padding="8 0 0 0" />
+        <TextBlock   Text="C# Function Call"
+                     Style="{ThemeResource SubheaderTextBlockStyle}"
+                     Foreground="OrangeRed"
+                     Padding="20 0 0 20" />
         <!-- Body -->
         <StackPanel Orientation="Horizontal"
                     Grid.Row="1">
-                <TextBox x:Name="Chunk2"
-                         Width="200"
-                         Height="200"
-                         HorizontalAlignment="Left"
-                         Margin="20 0 0 0"
-                         AcceptsReturn="True" />
+            <TextBox x:Name="Chunk2"
+                     Width="200"
+                     Height="200"
+                     HorizontalAlignment="Left"
+                     Margin="20 0 0 0"
+                     AcceptsReturn="True" />
             <StackPanel>
                 <Button Content="Call"
                         Click="Button_Click_2"

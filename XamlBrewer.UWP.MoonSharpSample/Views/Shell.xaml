@@ -8,7 +8,7 @@
       xmlns:vm="using:Mvvm">
     <Page.Resources>
         <SolidColorBrush x:Key="SplitViewBackgroundBrush"
-                         Color="LightSlateGray" />
+                         Color="#000079" />
         <SolidColorBrush x:Key="SplitViewForegroundBrush"
                          Color="White" />
         <SolidColorBrush x:Key="SplitViewHighlightBrush"
@@ -100,7 +100,7 @@
                 </Grid>
             </SplitView.Pane>
             <SplitView.Content>
-                <Grid>
+                <Grid Margin="20 0 0 0">
                     <!-- Navigation Frame -->
                     <Frame x:Name="SplitViewFrame">
                         <Frame.ContentTransitions>
@@ -126,11 +126,13 @@
                     </Grid>-->
 
                     <!-- Lua Logo -->
-                    <Image VerticalAlignment="Bottom"
-                           HorizontalAlignment="Right"
-                           Margin="8"
-                           Source="ms-appx:///Assets/lua.gif"
-                           Height="160" />
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Bottom"
+                                HorizontalAlignment="Right">
+                        <Image Margin="4"
+                               Source="ms-appx:///Assets/lua.gif"
+                               Height="160" />
+                    </StackPanel>
                 </Grid>
             </SplitView.Content>
         </SplitView>
