@@ -100,7 +100,8 @@
                 </Grid>
             </SplitView.Pane>
             <SplitView.Content>
-                <Grid Margin="20 0 0 0">
+                <Grid  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                       Padding="20 8 0 0">
                     <!-- Navigation Frame -->
                     <Frame x:Name="SplitViewFrame">
                         <Frame.ContentTransitions>
@@ -130,7 +131,7 @@
                                 VerticalAlignment="Bottom"
                                 HorizontalAlignment="Right">
                         <Image Margin="4"
-                               Source="ms-appx:///Assets/lua.gif"
+                               Source="ms-appx:///Assets/lua.png"
                                Height="160" />
                     </StackPanel>
                 </Grid>

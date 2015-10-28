@@ -1,8 +1,10 @@
 ﻿using MoonSharp.Interpreter;
 using System;
+using Windows.UI;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 
 namespace XamlBrewer.UWP.MoonSharpSample.Views
 {
@@ -11,6 +13,11 @@ namespace XamlBrewer.UWP.MoonSharpSample.Views
         public CSharpFunctionPage()
         {
             this.InitializeComponent();
+
+            Chunk.Text = @"hello = 'Hello World'
+say(hello)
+
+print(reverse(hello))";
         }
 
         public async static void Say(string message)
@@ -25,9 +32,9 @@ namespace XamlBrewer.UWP.MoonSharpSample.Views
             Array.Reverse(charArray);
             return new string(charArray);
         }
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string scriptCode = Chunk2.Text;
+            string scriptCode = Chunk.Text;
 
             Script script = new Script();
 
@@ -38,11 +45,13 @@ namespace XamlBrewer.UWP.MoonSharpSample.Views
 
                 script.DoString(scriptCode);
 
-                Result3.Text = "done";
+                Result.Foreground = new SolidColorBrush(Colors.Black);
+                Result.Text = "done";
             }
             catch (Exception ex)
             {
-                Result3.Text = ex.Message;
+                Result.Foreground = new SolidColorBrush(Colors.Red);
+                Result.Text = ex.Message;
             }
         }
     }

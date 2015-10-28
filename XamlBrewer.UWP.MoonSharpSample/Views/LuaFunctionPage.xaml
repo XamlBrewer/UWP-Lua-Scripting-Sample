@@ -18,6 +18,7 @@
                    Text="Lua Function Call"
                    Foreground="OrangeRed"
                    Padding="20 0 0 20" />
+        
         <!-- Body -->
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <StackPanel>
@@ -42,10 +43,10 @@
                              Width="80" />
                 </StackPanel>
                 <Button Content="Call"
-                        Click="Button_Click_1"
+                        Click="Button_Click"
                         Height="40"
                         Width="80" />
-                <TextBlock x:Name="Result2" />
+                <TextBlock x:Name="Result" />
             </StackPanel>
         </StackPanel>
     </Grid>

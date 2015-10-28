@@ -129,7 +129,7 @@
     <None Include="XamlBrewer.UWP.MoonSharpSample_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\lua.gif" />
+    <Content Include="Assets\lua.png" />
     <Content Include="Assets\moonsharp.png" />
     <Content Include="Libs\MoonSharp.Interpreter.dll" />
     <Content Include="Libs\MoonSharp.Interpreter.pdb" />

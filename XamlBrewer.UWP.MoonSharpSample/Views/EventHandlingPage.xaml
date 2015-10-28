@@ -1,11 +1,10 @@
-﻿<Page
-    x:Class="XamlBrewer.UWP.MoonSharpSample.Views.EventHandlingPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:XamlBrewer.UWP.MoonSharpSample.Views"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+﻿<Page x:Class="XamlBrewer.UWP.MoonSharpSample.Views.EventHandlingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:XamlBrewer.UWP.MoonSharpSample.Views"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -18,28 +17,60 @@
                    Text="C# Object Sharing"
                    Foreground="OrangeRed"
                    Padding="20 0 0 20" />
+
         <!-- Body -->
-        <StackPanel Orientation="Horizontal"
-                    Grid.Row="1">
-            <StackPanel>
-                <TextBox x:Name="Chunk4"
-                         Width="200"
-                         Height="200"
-                         HorizontalAlignment="Left"
-                         Margin="20 0 0 0"
-                         AcceptsReturn="True" />
-            </StackPanel>
-            <StackPanel>
+        <Grid Grid.Row="1"
+              Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="160" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="160" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Script -->
+            <TextBox x:Name="Chunk"
+                     Grid.ColumnSpan="2"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"
+                     FontSize="24"
+                     AcceptsReturn="True" />
+
+            <Grid Grid.Row="1"
+                  Grid.Column="1"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Stretch"
+                  Margin="0 8 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
                 <Button Content="Call"
-                        Click="Button_Click_4"
-                        Height="40"
-                        Width="80" />
+                        Click="CallButton_Click"
+                        FontSize="24"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        Margin="0 0 4 0" />
                 <Button Content="Raise"
-                        Click="Button_Click_5"
-                        Height="40"
-                        Width="80" />
-                <TextBlock x:Name="Result5" />
-            </StackPanel>
-        </StackPanel>
+                        Click="RaiseButton_Click"
+                        Grid.Column="1"
+                        FontSize="24"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        Margin="4 0 0 0" />
+            </Grid>
+
+            <!-- Result -->
+            <TextBlock x:Name="Result"
+                       FontWeight="SemiBold"
+                       FontSize="24"
+                       Padding="12 4 0 0"
+                       Grid.Row="1"
+                       VerticalAlignment="Top"
+                       Margin="0 8 0 0" />
+        </Grid>
     </Grid>
 </Page>

@@ -28,7 +28,7 @@ namespace XamlBrewer.UWP.MoonSharpSample.Models
         
         public Double CalculateVAT(double amount)
         {
-            return amount + (amount * vatRate / 100);
+            return amount * vatRate / 100;
         }
     }
 }

@@ -17,26 +17,44 @@
                    Text="Lua Expression Evaluation"
                    Foreground="OrangeRed"
                    Padding="20 0 0 20" />
+       
         <!-- Body -->
-        <RelativePanel Grid.Row="1">
+        <Grid Grid.Row="1"
+              Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="160" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="160" />
+            </Grid.ColumnDefinitions>
+
             <!-- Expression -->
             <TextBox x:Name="Expression"
-                     Width="240"
-                     />
+                     Grid.ColumnSpan="2"
+                     FontSize="24" />
+
             <!-- Button -->
             <Button x:Name="Evaluate"
                     Content="Evaluate"
                     Click="Button_Click"
                     FontSize="24"
-                    Margin="8"
-                    Width="120"
-                    Height="60"
-                    RelativePanel.RightOf="Expression"
-                    RelativePanel.AlignVerticalCenterWith="Expression"/>
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Stretch"
+                    Margin="0 8 0 0" />
+
             <!-- Result -->
             <TextBlock x:Name="Result"
-                       RelativePanel.RightOf="Evaluate"
-                       RelativePanel.AlignVerticalCenterWith="Expression" />
-        </RelativePanel>
+                       FontWeight="SemiBold"
+                       FontSize="24"
+                       Padding="12 4 0 0"
+                       Grid.Row="1"
+                       VerticalAlignment="Top"
+                       Margin="0 8 0 0" />
+        </Grid>
     </Grid>
 </Page>

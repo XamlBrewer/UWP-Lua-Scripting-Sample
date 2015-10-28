@@ -4,5 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:XamlBrewer.UWP.MoonSharpSample"
     RequestedTheme="Light">
-
+    <Application.Resources>
+        <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush"
+                         Color="Gainsboro" />
+    </Application.Resources>
 </Application>

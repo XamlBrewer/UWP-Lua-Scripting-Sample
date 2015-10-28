@@ -13,26 +13,50 @@
         </Grid.RowDefinitions>
 
         <!-- Title -->
-        <TextBlock   Text="C# Function Call"
+        <TextBlock   Text="C# Function Calls"
                      Style="{ThemeResource SubheaderTextBlockStyle}"
                      Foreground="OrangeRed"
                      Padding="20 0 0 20" />
+
         <!-- Body -->
-        <StackPanel Orientation="Horizontal"
-                    Grid.Row="1">
-            <TextBox x:Name="Chunk2"
-                     Width="200"
-                     Height="200"
-                     HorizontalAlignment="Left"
-                     Margin="20 0 0 0"
+        <Grid Grid.Row="1"
+              Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="160" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="160" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Script -->
+            <TextBox x:Name="Chunk"
+                     Grid.ColumnSpan="2"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"
+                     FontSize="24"
                      AcceptsReturn="True" />
-            <StackPanel>
-                <Button Content="Call"
-                        Click="Button_Click_2"
-                        Height="40"
-                        Width="80" />
-                <TextBlock x:Name="Result3" />
-            </StackPanel>
-        </StackPanel>
+
+            <!-- Button -->
+            <Button Content="Call"
+                    Click="Button_Click"
+                    FontSize="24"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Stretch"
+                    Margin="0 8 0 0" />
+
+            <!-- Result -->
+            <TextBlock x:Name="Result"
+                       FontWeight="SemiBold"
+                       FontSize="24"
+                       Padding="12 4 0 0"
+                       Grid.Row="1"
+                       VerticalAlignment="Top"
+                       Margin="0 8 0 0" />
+        </Grid>
     </Grid>
 </Page>
