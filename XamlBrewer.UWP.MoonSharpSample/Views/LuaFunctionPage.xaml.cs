@@ -12,6 +12,15 @@ namespace XamlBrewer.UWP.MoonSharpSample.Views
         public LuaFunctionPage()
         {
             this.InitializeComponent();
+
+            ParameterA.Text = "42";
+            ParameterB.Text = "36";
+
+            Chunk.Text = @"if a<b then
+  return a
+else
+  return b
+end";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

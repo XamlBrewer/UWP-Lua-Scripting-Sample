@@ -1,11 +1,11 @@
-﻿<Page
-    x:Class="XamlBrewer.UWP.MoonSharpSample.Views.LuaFunctionPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:XamlBrewer.UWP.MoonSharpSample.Views"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+﻿<Page x:Class="XamlBrewer.UWP.MoonSharpSample.Views.LuaFunctionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:XamlBrewer.UWP.MoonSharpSample.Views"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      FontSize="24">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -18,36 +18,78 @@
                    Text="Lua Function Call"
                    Foreground="OrangeRed"
                    Padding="20 0 0 20" />
-        
+
         <!-- Body -->
-        <StackPanel Orientation="Horizontal" Grid.Row="1">
-            <StackPanel>
-                <TextBlock Text="function f(a, b)" />
-                <TextBox x:Name="Chunk"
-                         Width="200"
-                         Height="200"
-                         HorizontalAlignment="Left"
-                         Margin="20 0 0 0"
-                         AcceptsReturn="True" />
-                <TextBlock Text="end" />
-            </StackPanel>
-            <StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="a:" />
-                    <TextBox x:Name="ParameterA"
-                             Width="80" />
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="b:" />
-                    <TextBox x:Name="ParameterB"
-                             Width="80" />
-                </StackPanel>
-                <Button Content="Call"
-                        Click="Button_Click"
-                        Height="40"
-                        Width="80" />
-                <TextBlock x:Name="Result" />
-            </StackPanel>
-        </StackPanel>
+        <Grid Grid.Row="1"
+              Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="160" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="160" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Function Header-->
+            <TextBlock Text="function f(a, b)" />
+
+            <!-- Chunk - Function Body -->
+            <TextBox x:Name="Chunk"
+                     Margin="20 0 0 0"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"
+                     FontSize="24"
+                     AcceptsReturn="True"
+                     Grid.Row="1" />
+
+            <!-- Function End-->
+            <TextBlock Text="end"
+                       Grid.Row="2" />
+
+            <!-- Parameters -->
+            <Grid Grid.Row="1"
+                  Grid.Column="1"
+                  VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text=" a: " />
+                <TextBox x:Name="ParameterA"
+                         FontSize="24"
+                         Grid.Column="1" />
+                <TextBlock Text=" b: "
+                           Grid.Row="1"
+                           Margin="0 8 0 0" />
+                <TextBox x:Name="ParameterB"
+                         FontSize="24"
+                         Margin="0 8 0 0"
+                         Grid.Row="1"
+                         Grid.Column="1" />
+            </Grid>
+
+            <!-- Button -->
+            <Button Content="Call"
+                    Click="Button_Click"
+                    FontSize="24"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    HorizontalAlignment="Stretch"
+                    Margin="0 8 0 0" />
+
+            <!-- Result -->
+            <TextBlock x:Name="Result"
+                       FontWeight="SemiBold"
+                       Margin="0 8 0 0"
+                       Grid.Row="3" />
+        </Grid>
     </Grid>
 </Page>
