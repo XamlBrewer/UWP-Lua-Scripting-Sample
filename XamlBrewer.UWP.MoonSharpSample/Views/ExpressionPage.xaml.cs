@@ -7,6 +7,9 @@ using Windows.UI.Xaml.Media;
 
 namespace XamlBrewer.UWP.MoonSharpSample.Views
 {
+    /// <summary>
+    /// Shows how to run a Lua script from C# and get back the result.
+    /// </summary>
     public sealed partial class ExpressionPage : Page
     {
         public ExpressionPage()
@@ -20,7 +23,9 @@ namespace XamlBrewer.UWP.MoonSharpSample.Views
 
             try
             {
-                var result = Script.RunString(script);
+                // Run the script and get the result.
+                DynValue result = Script.RunString(script);
+
                 Result.Foreground = new SolidColorBrush(Colors.Black);
                 Result.Text = result.ToString();
             }

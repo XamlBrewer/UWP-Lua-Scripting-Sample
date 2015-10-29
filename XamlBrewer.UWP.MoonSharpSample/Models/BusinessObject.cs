@@ -1,12 +1,11 @@
 ﻿using MoonSharp.Interpreter;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XamlBrewer.UWP.MoonSharpSample.Models
 {
+    /// <summary>
+    /// A sample C# class that is shared with some of the Lua scripts.
+    /// </summary>
     [MoonSharpUserData]
     public class BusinessObject
     {

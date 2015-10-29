@@ -7,6 +7,9 @@ using Windows.UI.Xaml.Media;
 
 namespace XamlBrewer.UWP.MoonSharpSample.Views
 {
+    /// <summary>
+    /// Shows how to provide parameters to a Lua function from C#, call it, and get the result back.
+    /// </summary>
     public sealed partial class LuaFunctionPage : Page
     {
         public LuaFunctionPage()
@@ -35,12 +38,23 @@ end";
 
                 DynValue luaFunction = script.Globals.Get("f");
 
-                // Type conversion is optional
-                DynValue res = script.Call(luaFunction, DynValue.NewString(ParameterA.Text).CastToNumber(), DynValue.NewString(ParameterB.Text).CastToNumber());
+                // Type conversion for the parameters is optional
+                DynValue res = script.Call(
+                                        luaFunction, 
+                                        DynValue.NewString(ParameterA.Text).CastToNumber(), 
+                                        Double.Parse(ParameterB.Text));
+
+                // Check the return type.
+                if (res.Type != DataType.Number)
+                {
+                    throw new InvalidCastException("Invalid return type: " + res.Type.ToString());
+                }
 
                 Result.Foreground = new SolidColorBrush(Colors.Black);
-                // Type conversion is optional
+
+                // Type conversion swallows exceptions.
                 Result.Text = res.Number.ToString();
+                // Result.Text = res.CastToNumber().ToString();
             }
             catch (Exception ex)
             {

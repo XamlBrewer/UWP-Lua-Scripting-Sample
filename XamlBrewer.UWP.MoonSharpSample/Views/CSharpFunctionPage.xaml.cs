@@ -8,6 +8,9 @@ using Windows.UI.Xaml.Media;
 
 namespace XamlBrewer.UWP.MoonSharpSample.Views
 {
+    /// <summary>
+    /// Shows how to expose C# methods to a Lua script, and call these.
+    /// </summary>
     public sealed partial class CSharpFunctionPage : Page
     {
         public CSharpFunctionPage()
@@ -20,12 +23,20 @@ say(hello)
 print(reverse(hello))";
         }
 
+        /// <summary>
+        /// void Method that will be exposed to the script.
+        /// </summary>
+        /// <remarks>Yes, it's async.</remarks>
         public async static void Say(string message)
         {
             var d = new MessageDialog(message);
             await d.ShowAsync();
         }
 
+        /// <summary>
+        /// Method with return type that will be exposed to the script.
+        /// </summary>
+        /// <remarks>No, it doesn't have to be static.</remarks>
         public static string Reverse(string tobereversed)
         {
             char[] charArray = tobereversed.ToCharArray();
@@ -40,6 +51,7 @@ print(reverse(hello))";
 
             try
             {
+                // Expose the C# methods.
                 script.Globals["say"] = (Action<String>)(Say);
                 script.Globals["reverse"] = (Func<String, String>)(Reverse);
 

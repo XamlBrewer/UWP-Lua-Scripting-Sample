@@ -8,6 +8,9 @@ using XamlBrewer.UWP.MoonSharpSample.Models;
 
 namespace XamlBrewer.UWP.MoonSharpSample.Views
 {
+    /// <summary>
+    /// Shows how to expose a C# instance to a Lua script, how the script accesses and manipulates that instance.
+    /// </summary>
     public sealed partial class ObjectSharingPage : Page
     {
         public ObjectSharingPage()
@@ -24,8 +27,10 @@ print(obj.calculateVAT(200))";
         {
             string scriptCode = Chunk.Text;
 
-            // Automatically register all MoonSharpUserData types
-            // UserData.RegisterAssembly(); // Hey, that did not work
+            // Register the type(s) to be used in the script.
+
+            // Automatically register all classes with the MoonSharpUserData attribute.
+            // UserData.RegisterAssembly(); // Hey, that did not work (not here and not in WPF)
 
             // Automatically register all types. Pandora's box.
             // UserData.RegistrationPolicy = InteropRegistrationPolicy.Automatic;
@@ -38,7 +43,13 @@ print(obj.calculateVAT(200))";
             {
                 var obj = UserData.Create(new BusinessObject());
 
-                script.Globals.Set("obj", obj);
+                // Actually, this also works:
+                // var obj = new BusinessObject();
+
+                script.Globals["obj"] = obj;
+
+                // Alternatively:
+                //script.Globals.Set("obj", obj);
 
                 script.DoString(scriptCode);
 
