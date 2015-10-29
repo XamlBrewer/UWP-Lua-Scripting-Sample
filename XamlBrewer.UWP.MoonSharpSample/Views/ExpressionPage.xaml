@@ -17,7 +17,7 @@
                    Text="Lua Expression Evaluation"
                    Foreground="OrangeRed"
                    Padding="20 0 0 20" />
-       
+
         <!-- Body -->
         <Grid Grid.Row="1"
               Margin="8">
@@ -34,7 +34,8 @@
             <!-- Expression -->
             <TextBox x:Name="Expression"
                      Grid.ColumnSpan="2"
-                     FontSize="24" />
+                     FontSize="24"
+                     IsSpellCheckEnabled="False" />
 
             <!-- Button -->
             <Button x:Name="Evaluate"
@@ -55,6 +56,22 @@
                        Grid.Row="1"
                        VerticalAlignment="Top"
                        Margin="0 8 0 0" />
+
+            <!-- Guidance -->
+            <TextBlock FontSize="16"
+                       Foreground="DimGray"
+                       Grid.Row="2"
+                       TextWrapping="WrapWholeWords">
+                <Run Text="Enter a Lua expression and click the " /><Italic>Evaluate</Italic><Run Text=" button." />
+                <LineBreak />
+                <Run Text="Some examples: " />
+                <LineBreak />
+                <Run Text="   (200 + 321) - (math.cos(3) * 100)" />
+                <LineBreak />
+                <Run Text="   'Hello'..' '..'World'" />
+                <LineBreak />
+                <Run Text="   os.date()" />
+            </TextBlock>
         </Grid>
     </Grid>
 </Page>

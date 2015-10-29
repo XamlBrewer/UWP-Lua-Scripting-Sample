@@ -1,11 +1,10 @@
-﻿<Page
-    x:Class="XamlBrewer.UWP.MoonSharpSample.Views.ObjectSharingPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:XamlBrewer.UWP.MoonSharpSample.Views"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+﻿<Page x:Class="XamlBrewer.UWP.MoonSharpSample.Views.ObjectSharingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:XamlBrewer.UWP.MoonSharpSample.Views"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -18,7 +17,7 @@
                    Text="C# Object Sharing"
                    Foreground="OrangeRed"
                    Padding="20 0 0 20" />
-        
+
         <!-- Body -->
         <Grid Grid.Row="1"
               Margin="8">
@@ -31,14 +30,15 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="160" />
             </Grid.ColumnDefinitions>
-            
+
             <!-- Script -->
             <TextBox x:Name="Chunk"
                      Grid.ColumnSpan="2"
                      HorizontalAlignment="Stretch"
                      VerticalAlignment="Stretch"
                      FontSize="24"
-                     AcceptsReturn="True" />
+                     AcceptsReturn="True"
+                     IsSpellCheckEnabled="False" />
 
             <!-- Button -->
             <Button Content="Call"
@@ -58,6 +58,16 @@
                        Grid.Row="1"
                        VerticalAlignment="Top"
                        Margin="0 8 0 0" />
+
+            <!-- Guidance -->
+            <TextBlock FontSize="16"
+                       Foreground="DimGray"
+                       Grid.Row="2"
+                       TextWrapping="WrapWholeWords">
+                <Run Text="This script has access to a C# object instance called " /><Italic>obj</Italic><Run Text=" that comes with a " /><Italic>vatRate</Italic><Run Text=" property and a " /><Italic>calculateVAT(double)</Italic><Run Text=" method." />
+                <LineBreak />
+                <Run Text="Press the " /><Italic>Call</Italic><Run Text=" button to run the script, and the " /><Italic>Raise</Italic><Run Text=" button to raise the event from C#." />
+            </TextBlock>
         </Grid>
     </Grid>
 </Page>

@@ -71,6 +71,14 @@
                        Grid.Row="1"
                        VerticalAlignment="Top"
                        Margin="0 8 0 0" />
+
+            <!-- Guidance -->
+            <TextBlock FontSize="16"
+                       Foreground="DimGray"
+                       Grid.Row="2"
+                       TextWrapping="WrapWholeWords">
+                <Run Text="This script has access to a C# object instance called " /><Italic>obj</Italic><Run Text=" that comes with a " /><Italic>somethingHappened</Italic><Run Text=" event and a " /><Italic>raiseTheEvent()</Italic><Run Text=" method." />
+            </TextBlock>
         </Grid>
     </Grid>
 </Page>

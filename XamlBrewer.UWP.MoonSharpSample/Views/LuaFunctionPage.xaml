@@ -44,6 +44,7 @@
                      VerticalAlignment="Stretch"
                      FontSize="24"
                      AcceptsReturn="True"
+                     IsSpellCheckEnabled="False"
                      Grid.Row="1" />
 
             <!-- Function End-->
@@ -90,6 +91,14 @@
                        FontWeight="SemiBold"
                        Margin="0 8 0 0"
                        Grid.Row="3" />
+
+            <!-- Guidance -->
+            <TextBlock FontSize="16"
+                       Foreground="DimGray"
+                       Grid.Row="4"
+                       TextWrapping="WrapWholeWords">
+                <Run Text="Enter numeric values for the function parameters, modify the function body, and click the " /><Italic>Call</Italic><Run Text=" button." />
+            </TextBlock>
         </Grid>
     </Grid>
 </Page>

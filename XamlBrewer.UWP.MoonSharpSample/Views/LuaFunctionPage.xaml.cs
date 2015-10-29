@@ -44,7 +44,7 @@ end";
             }
             catch (Exception ex)
             {
-                Result.Foreground = new SolidColorBrush(Colors.Black);
+                Result.Foreground = new SolidColorBrush(Colors.Red);
                 Result.Text = ex.Message;
             }
         }

@@ -37,7 +37,8 @@
                      HorizontalAlignment="Stretch"
                      VerticalAlignment="Stretch"
                      FontSize="24"
-                     AcceptsReturn="True" />
+                     AcceptsReturn="True"
+                     IsSpellCheckEnabled="False" />
 
             <!-- Button -->
             <Button Content="Call"
@@ -57,6 +58,14 @@
                        Grid.Row="1"
                        VerticalAlignment="Top"
                        Margin="0 8 0 0" />
+
+            <!-- Guidance -->
+            <TextBlock FontSize="16"
+                       Foreground="DimGray"
+                       Grid.Row="2"
+                       TextWrapping="WrapWholeWords">
+                <Run Text="This script has access to " /><Italic>say()</Italic><Run Text=" and a " /><Italic>reverse(string)</Italic><Run Text=" methods that are defined in C#." />
+            </TextBlock>
         </Grid>
     </Grid>
 </Page>
